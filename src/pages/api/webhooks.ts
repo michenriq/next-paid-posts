@@ -28,7 +28,7 @@ const relevantEvents = new Set([
   'customer.subscription.deleted'
 ])
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if(req.method === 'POST') {
 
     const buf = await buffer(req)
@@ -82,3 +82,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
 }
+
+export default handler
